@@ -48,7 +48,7 @@ export default function App() {
                   containerStyle={styles.icon}
                   color="white"
                   type="ionicon"
-                  name={Platform.OS === "ios" ? "ios-home" : "md-home"}
+                  name={Platform.OS === "ios" ? "ios-menu" : "md-menu"}
                 />
               </View>
             ),
