@@ -1,6 +1,8 @@
 import React from "react";
 import { View, Image, StyleSheet, Text } from "react-native";
 
+import user from "../api/users.json";
+
 export default function Home() {
   return (
     <View style={styles.container}>
@@ -23,13 +25,15 @@ export default function Home() {
           </View>
           <View style={styles.info}>
             <View style={styles.info_names}>
-              <Text style={styles.nameTxt}>Marvin McKinney</Text>
-              <Text style={styles.profile_typeTxt}>Student</Text>
+              <Text style={styles.nameTxt}>{user.name}</Text>
+              <Text style={styles.profile_typeTxt}>{user.type}</Text>
             </View>
 
             <View style={styles.extra_info}>
-              <Text style={styles.extra_infoTxt}>S15049</Text>
-              <Text style={styles.extra_infoTxt}>Level III</Text>
+              <Text style={styles.extra_infoTxt}>{user.student_id}</Text>
+              <Text style={styles.extra_infoTxt}>
+                {user.level[2].level_name}
+              </Text>
             </View>
           </View>
         </View>

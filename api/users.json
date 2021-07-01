@@ -1,0 +1,31 @@
+{
+  "name": "Marvin KcKinney",
+  "type": "Student",
+  "nic": 9003237,
+  "dob": "22 Oct, 2020",
+  "phone": "(074) 555-0127",
+  "adderess": "2972 Westheimer Rd, Santa Ana, illinois 85486",
+  "email": "tim.jenning@example.com",
+
+  "student_id": "S15049",
+  "level": [
+    {
+      "level_name": "Level I",
+      "completion": 89,
+      "month": "January"
+    },
+    {
+      "level_name": "Level II",
+      "completion": 60,
+      "month": "August"
+    },
+    {
+      "level_name": "Level III",
+      "completion": 50,
+      "month": "July"
+    }
+  ],
+  "batch": 6,
+  "year_commencement": 2020,
+  "center": "Matara"
+}
