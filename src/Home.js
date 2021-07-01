@@ -38,6 +38,21 @@ export default function Home() {
           </View>
         </View>
       </View>
+
+      <View style={styles.tabbar}>
+        <View style={styles.tab}>
+          <Text style={styles.tabTxt}>Personal Details</Text>
+        </View>
+        <View style={styles.tab}>
+          <Text style={styles.tabTxt}>Academic Details</Text>
+        </View>
+        <View style={styles.tab}>
+          <Text style={styles.tabTxt}>Timeline</Text>
+        </View>
+      </View>
+      <View style={styles.profile_body}>
+        <Text style={styles.topicTxt}>Personal Details</Text>
+      </View>
     </View>
   );
 }
@@ -45,6 +60,39 @@ export default function Home() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  profile_body: {
+    display: "flex",
+    width: "100%",
+    alignItems: "center",
+  },
+  topicTxt: {
+    color: "black",
+    fontSize: 18,
+    fontWeight: "600",
+    marginTop: 15,
+  },
+  tabbar: {
+    display: "flex",
+    width: "100%",
+    height: 30,
+
+    marginTop: 20,
+    flexDirection: "row",
+
+    justifyContent: "space-between",
+  },
+  tab: {
+    display: "flex",
+    width: "33.3%",
+    height: 30,
+    backgroundColor: "#3C6DC9",
+    borderWidth: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  tabTxt: {
+    color: "white",
   },
   profile: {
     height: 135,
