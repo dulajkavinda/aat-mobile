@@ -1,8 +1,9 @@
 import React from "react";
 import { View, Image, StyleSheet, Text } from "react-native";
 
+import ProfileTabView from './components/ProfileTabView'
+
 import user from "../api/users.json";
-import UseDetailRows from "./components/UseDetailRows";
 
 export default function Home() {
   return (
@@ -39,29 +40,7 @@ export default function Home() {
           </View>
         </View>
       </View>
-
-      <View style={styles.tabbar}>
-        <View style={styles.tab}>
-          <Text style={styles.tabTxt}>Personal Details</Text>
-        </View>
-        <View style={styles.tab}>
-          <Text style={styles.tabTxt}>Academic Details</Text>
-        </View>
-        <View style={styles.tab}>
-          <Text style={styles.tabTxt}>Timeline</Text>
-        </View>
-      </View>
-      <View style={styles.profile_body}>
-        <Text style={styles.topicTxt}>Personal Details</Text>
-        <View style={styles.table}>
-          <UseDetailRows name="Full Name :" data={user.name} />
-          <UseDetailRows name="NIC " data={user.nic} />
-          <UseDetailRows name="DOB " data={user.dob} />
-          <UseDetailRows name="Phone " data={user.phone} />
-          <UseDetailRows name="Address " data={user.adderess} />
-          <UseDetailRows name="Email " data={user.email} />
-        </View>
-      </View>
+      <ProfileTabView />
     </View>
   );
 }
@@ -149,7 +128,7 @@ const styles = StyleSheet.create({
     height: 135,
     width: "50%",
     justifyContent: "center",
-    alignItems: "center",
+    alignItems: "center", 
   },
   info: {
     display: "flex",

@@ -4,13 +4,13 @@ export default function UseDetailRows(props) {
   return (
     <>
       <View style={styles.wrapper}>
-        <View style={styles.left}>
+        <View style={[styles.left, {width: `${props.left}`}]}>
           <View style={styles.row}>
             <Text>{props.name}</Text>
             <Text>:</Text>
           </View>
         </View>
-        <View style={styles.right}>
+        <View style={[styles.right,{width: `${props.right}`}]}>
           <View style={styles.data}>
             <Text style={styles.dataTxt}>{props.data}</Text>
           </View>
@@ -30,15 +30,13 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   left: {
-    display: "flex",
-    width: "40%",
+    display: "flex"
   },
   dataTxt: {
     fontSize: 13.5,
   },
   right: {
     display: "flex",
-    width: "60%",
   },
   row: {
     display: "flex",
