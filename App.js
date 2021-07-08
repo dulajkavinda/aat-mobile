@@ -16,22 +16,6 @@ import Home from "./src/Home";
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
-function Homes() {
-  return (
-    <View>
-      <Text>Home</Text>
-    </View>
-  );
-}
-
-function Profile() {
-  return (
-    <View>
-      <Text>Details</Text>
-    </View>
-  );
-}
-
 export default function App() {
   return (
     <NavigationContainer>

@@ -59,9 +59,9 @@ const ProfileTabView = () => {
 							]}
 							onPress={() => setStatusFilter(item.title)}>
 							<Text
-								tyle={[
+								style={[
 									styles.textTab,
-									status === item.title && styles.textTabActive,
+									status === item.title && styles.textTabActive
 								]}>
 								{item.title}
 							</Text>
@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
 		backgroundColor: '#4178E0',
 	},
 	textTab: {
-		fontSize: 10,
+		fontSize: 14,
 		alignContent: 'center',
 		color: 'white',
 	},
@@ -113,6 +113,7 @@ const styles = StyleSheet.create({
 	},
 	textTabActive: {
 		color: 'white',
+		fontSize: 14,
 	},
 });
 

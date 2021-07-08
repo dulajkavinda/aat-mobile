@@ -1,8 +1,8 @@
 import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 
-import user from '../../api/users.json';
 import UseDetailRows from './UseDetailRows';
+import ExamContentButton from './ExamContentButton'
 
 const PersonalDetails = (props) => {
 	return (
