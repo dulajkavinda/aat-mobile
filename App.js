@@ -11,7 +11,8 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import { HeaderBackButton } from "@react-navigation/stack";
 
-import Home from "./src/Home";
+import Profile from "./src/Profile";
+import Examination from "./src/Examination";
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -21,8 +22,8 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
-          name="Profile"
-          component={Home}
+          name="Examination"
+          component={Examination}
           options={{
             headerStyle: { backgroundColor: "#1E62AD" },
             headerTintColor: "white",
@@ -69,6 +70,7 @@ export default function App() {
         />
       </Stack.Navigator>
     </NavigationContainer>
+    
   );
 }
 
