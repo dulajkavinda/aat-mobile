@@ -12,16 +12,16 @@ const PersonalDetails = (props) => {
 				<View style={styles.cardContent}>
 					<View style={styles.profile_body}>
 						<View style={styles.table}>
-							<UseDetailRows name='Student ID :' data={props.data.student_id} left={'60%'} right={'40%'}/>
-							<UseDetailRows name='Current Position ' data={props.data.current_position} left={'60%'} right={'40%'}/>
+							<UseDetailRows name='Student ID :' data={props.data.student_id} left={'60%'} right={'60%'}/>
+							<UseDetailRows name='Current Position ' data={props.data.current_position} left={'60%'} right={'60%'}/>
 							{props.data.level.map(item => {
                                 if((new Date().getMonth() + 1) === item.month){
-                                    return <UseDetailRows name='Batch ' data={item.level_name} left={'60%'} right={'40%'}/>
+                                    return <UseDetailRows name='Level ' data={item.level_name} left={'60%'} right={'60%'}/>
                                 }
                             })}
-							<UseDetailRows name='Batch ' data={props.data.batch} left={'60%'} right={'40%'}/>
-							<UseDetailRows name='Year of commencement ' data={props.data.year_commencement} left={'60%'} right={'40%'}/>
-							<UseDetailRows name='Center ' data={props.data.center} left={'60%'} right={'40%'}/>
+							<UseDetailRows name='Batch ' data={props.data.batch < 10 ? `0${props.data.batch}`:props.data.batch} left={'60%'} right={'60%'}/>
+							<UseDetailRows name='Year of commencement ' data={props.data.year_commencement} left={'60%'} right={'60%'}/>
+							<UseDetailRows name='Center ' data={props.data.center} left={'60%'} right={'60%'}/>
 						</View>
 					</View>
 				</View>
