@@ -16,6 +16,7 @@ import Profile from "./src/Profile";
 import Examination from "./src/Examination";
 import Notifications from "./src/Notifications";
 import EventCalendar from "./src/EventCalendar";
+import ExamResults from "./src/ExamResults";
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -47,6 +48,12 @@ const App = () => (
         component={Notifications}
         options={{ drawerLabel: "Notifications" }}
       />
+
+      <AppDrawer.Screen
+        name="Exam Results"
+        component={ExamResults}
+        options={{ drawerLabel: "Exam Results" }}
+      />
     </AppDrawer.Navigator>
   </NavigationContainer>
 );
@@ -55,7 +62,7 @@ function StackFlow() {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="Examination"
+        name="Profile"
         component={Profile}
         options={{
           headerStyle: { backgroundColor: "#1E62AD" },
