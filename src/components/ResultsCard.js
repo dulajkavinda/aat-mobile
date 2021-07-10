@@ -3,24 +3,18 @@ import { View, StyleSheet, Text } from 'react-native';
 
 import UseDetailRows from './UseDetailRows';
 
-const PersonalDetails = (props) => {
+const ResultsCard = (props) => {
 	return (
 		<View>
-			<Text style={styles.headline}>Acadamic Details</Text>
+			<Text style={styles.headline}>Studnt {props.data.student_id} Results</Text>
 			<View style={styles.card}>
 				<View style={styles.cardContent}>
 					<View style={styles.profile_body}>
 						<View style={styles.table}>
-							<UseDetailRows name='Student ID :' data={props.data.student_id} left={'60%'} right={'40%'}/>
-							<UseDetailRows name='Current Position ' data={props.data.current_position} left={'60%'} right={'40%'}/>
-							{props.data.level.map(item => {
-                                if((new Date().getMonth() + 1) === item.month){
-                                    return <UseDetailRows name='Level ' data={item.level_name} left={'60%'} right={'40%'}/>
-                                }
+							<UseDetailRows name='Student ID :' data={props.data.student_id} left={'60%'} right={'60%'}/>
+							{props.data.results.map(item => {
+                                return <UseDetailRows name={item.subject_name} data={item.grade} left={'60%'} right={'60%'}/>
                             })}
-							<UseDetailRows name='Batch ' data={props.data.batch < 10 ? `0${props.data.batch}`:props.data.batch} left={'60%'} right={'40%'}/>
-							<UseDetailRows name='Year of commencement ' data={props.data.year_commencement} left={'60%'} right={'40%'}/>
-							<UseDetailRows name='Center ' data={props.data.center} left={'60%'} right={'40%'}/>
 						</View>
 					</View>
 				</View>
@@ -53,9 +47,9 @@ const styles = StyleSheet.create({
 	},
 	table: {
 		display: 'flex',
-		width: '90%',
+		width: '80%',
 
-		height: 300,
+		height: 200,
 		
 		flexDirection: 'column',
 		justifyContent: 'space-around',
@@ -67,4 +61,4 @@ const styles = StyleSheet.create({
 	},
 });
 
-export default PersonalDetails;
+export default ResultsCard;

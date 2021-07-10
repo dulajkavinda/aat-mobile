@@ -114,7 +114,6 @@ const styles = StyleSheet.create({
 		flexDirection: 'row',
 	},
 	text: {
-		color: '#ffff',
 		fontSize: 10,
 		fontWeight: '400',
 	},

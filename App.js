@@ -14,6 +14,7 @@ import { HeaderBackButton } from "@react-navigation/stack";
 import Profile from "./src/Profile";
 import Examination from "./src/Examination";
 import Notifications from './src/Notifications'
+import ExamResults from './src/ExamResults'
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -24,7 +25,7 @@ export default function App() {
       <Stack.Navigator>
         <Stack.Screen
           name="Examination"
-          component={Notifications}
+          component={ExamResults}
           options={{
             headerStyle: { backgroundColor: "#1E62AD" },
             headerTintColor: "white",

@@ -1,0 +1,17 @@
+{
+	"student_id": "S15049",
+	"results": [
+		{
+			"subject_name": "subject I",
+			"grade": "A"
+		},
+		{
+			"subject_name": "subject II",
+			"grade": "A -"
+		},
+		{
+			"subject_name": "subject III",
+			"grade": "B"
+		}
+	]
+}
