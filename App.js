@@ -16,6 +16,7 @@ import Profile from "./src/Profile";
 import Examination from "./src/Examination";
 import Notifications from "./src/Notifications";
 import EventCalendar from "./src/EventCalendar";
+import ExamResults from "./src/ExamResults";
 
 import StackWrapper from "./src/components/StackWrapper";
 
@@ -48,6 +49,12 @@ const App = () => (
         name="Notifications"
         component={NotificationsStack}
         options={{ drawerLabel: "Notifications" }}
+      />
+
+      <AppDrawer.Screen
+        name="Exam Results"
+        component={ExamResults}
+        options={{ drawerLabel: "Exam Results" }}
       />
     </AppDrawer.Navigator>
   </NavigationContainer>
