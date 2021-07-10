@@ -41,6 +41,12 @@ const App = () => (
         component={Examination}
         options={{ drawerLabel: "Examination" }}
       />
+
+      <AppDrawer.Screen
+        name="Notifications"
+        component={Notifications}
+        options={{ drawerLabel: "Notifications" }}
+      />
     </AppDrawer.Navigator>
   </NavigationContainer>
 );
