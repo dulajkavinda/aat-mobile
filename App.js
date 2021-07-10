@@ -17,6 +17,7 @@ import Examination from "./src/Examination";
 import Notifications from "./src/Notifications";
 import EventCalendar from "./src/EventCalendar";
 import ExamResults from "./src/ExamResults";
+import PastPapers from "./src/PastPapers";
 
 import StackWrapper from "./src/components/StackWrapper";
 
@@ -53,28 +54,43 @@ const App = () => (
 
       <AppDrawer.Screen
         name="Exam Results"
-        component={ExamResults}
+        component={ExamResultsStack}
         options={{ drawerLabel: "Exam Results" }}
+      />
+
+      <AppDrawer.Screen
+        name="Past Papers"
+        component={PastPapersStack}
+        options={{ drawerLabel: "Past Papers" }}
       />
     </AppDrawer.Navigator>
   </NavigationContainer>
 );
 
 function ProfileStack() {
-  return <StackWrapper componentScreen={Profile} />;
+  return <StackWrapper name="Profile" componentScreen={Profile} />;
 }
 
 function EventCalendarStack() {
-  return <StackWrapper componentScreen={EventCalendar} />;
+  return <StackWrapper name="Event Calender" componentScreen={EventCalendar} />;
 }
 
 function ExaminationStack() {
-  return <StackWrapper componentScreen={Examination} />;
+  return <StackWrapper name="Examination" componentScreen={Examination} />;
 }
 
 function NotificationsStack() {
-  return <StackWrapper componentScreen={Notifications} />;
+  return <StackWrapper name="Notifications" componentScreen={Notifications} />;
 }
+
+function ExamResultsStack() {
+  return <StackWrapper name="Exam Results" componentScreen={ExamResults} />;
+}
+
+function PastPapersStack() {
+  return <StackWrapper name="Past Papers" componentScreen={PastPapers} />;
+}
+
 
 export default App;
 

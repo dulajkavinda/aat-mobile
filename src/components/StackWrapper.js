@@ -5,12 +5,12 @@ import { StyleSheet, Text, View } from "react-native";
 import { Icon } from "react-native-elements";
 import { createStackNavigator } from "@react-navigation/stack";
 const Stack = createStackNavigator();
-const StackWrapper = ({ componentScreen }) => {
+const StackWrapper = ({ componentScreen, name }) => {
   const navigation = useNavigation();
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="Profile"
+        name={name}
         component={componentScreen}
         options={{
           headerStyle: { backgroundColor: "#1E62AD" },
