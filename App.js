@@ -17,6 +17,8 @@ import Examination from "./src/Examination";
 import Notifications from "./src/Notifications";
 import EventCalendar from "./src/EventCalendar";
 
+import StackWrapper from "./src/components/StackWrapper";
+
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 const AppDrawer = createDrawerNavigator();
@@ -25,84 +27,46 @@ const App = () => (
   <NavigationContainer>
     <AppDrawer.Navigator drawerType="back">
       <AppDrawer.Screen
-        name="Tabs"
-        component={StackFlow}
+        name="Profile"
+        component={ProfileStack}
         options={{ drawerLabel: "Profile" }}
       />
 
       <AppDrawer.Screen
         name="EventCalendar"
-        component={EventCalendar}
+        component={EventCalendarStack}
         options={{ drawerLabel: "Event Calendar" }}
       />
 
       <AppDrawer.Screen
         name="Examination"
-        component={Examination}
+        component={ExaminationStack}
         options={{ drawerLabel: "Examination" }}
       />
 
       <AppDrawer.Screen
         name="Notifications"
-        component={Notifications}
+        component={NotificationsStack}
         options={{ drawerLabel: "Notifications" }}
       />
     </AppDrawer.Navigator>
   </NavigationContainer>
 );
 
-function StackFlow() {
-  return (
-    <Stack.Navigator>
-      <Stack.Screen
-        name="Examination"
-        component={Profile}
-        options={{
-          headerStyle: { backgroundColor: "#1E62AD" },
-          headerTintColor: "white",
-          headerLeft: (props) => (
-            <View>
-              <Icon
-                containerStyle={styles.icon}
-                color="white"
-                type="ionicon"
-                name={Platform.OS === "ios" ? "ios-menu" : "md-menu"}
-              />
-            </View>
-          ),
-          headerRight: (props) => (
-            <View style={styles.iconContainer}>
-              <Icon
-                color="white"
-                type="ionicon"
-                name={
-                  Platform.OS === "ios" ? "ios-arrow-back" : "md-arrow-back"
-                }
-              />
-              <Icon
-                color="white"
-                type="ionicon"
-                name={
-                  Platform.OS === "ios"
-                    ? "ios-notifications"
-                    : "md-notifications"
-                }
-              />
-              <Icon
-                color="white"
-                type="ionicon"
-                name={
-                  Platform.OS === "ios"
-                    ? "ios-ellipsis-vertical"
-                    : "md-ellipsis-vertical"
-                }
-              />
-            </View>
-          ),
-        }}
-      />
-    </Stack.Navigator>
-  );
+function ProfileStack() {
+  return <StackWrapper componentScreen={Profile} />;
+}
+
+function EventCalendarStack() {
+  return <StackWrapper componentScreen={EventCalendar} />;
+}
+
+function ExaminationStack() {
+  return <StackWrapper componentScreen={Examination} />;
+}
+
+function NotificationsStack() {
+  return <StackWrapper componentScreen={Notifications} />;
 }
 
 export default App;
