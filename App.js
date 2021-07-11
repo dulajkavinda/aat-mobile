@@ -18,6 +18,7 @@ import Notifications from "./src/Notifications";
 import EventCalendar from "./src/EventCalendar";
 import ExamResults from "./src/ExamResults";
 import PastPapers from "./src/PastPapers";
+import ExamTimetables from "./src/ExamTimetables";
 
 import StackWrapper from "./src/components/StackWrapper";
 
@@ -63,6 +64,12 @@ const App = () => (
         component={PastPapersStack}
         options={{ drawerLabel: "Past Papers" }}
       />
+
+      <AppDrawer.Screen
+        name="Exam Timetables"
+        component={ExamTimeTablesStack}
+        options={{ drawerLabel: "Exam Timetables" }}
+      />
     </AppDrawer.Navigator>
   </NavigationContainer>
 );
@@ -89,6 +96,10 @@ function ExamResultsStack() {
 
 function PastPapersStack() {
   return <StackWrapper name="Past Papers" componentScreen={PastPapers} />;
+}
+
+function ExamTimeTablesStack() {
+  return <StackWrapper name="Exam Timetables" componentScreen={ExamTimetables} />;
 }
 
 
