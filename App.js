@@ -56,19 +56,19 @@ const App = () => (
       <AppDrawer.Screen
         name="Exam Results"
         component={ExamResultsStack}
-        options={{ drawerLabel: "Exam Results" }}
+        options={{ drawerLabel: () => null }}
       />
 
       <AppDrawer.Screen
         name="Past Papers"
         component={PastPapersStack}
-        options={{ drawerLabel: "Past Papers" }}
+        options={{ drawerLabel: () => null }}
       />
 
       <AppDrawer.Screen
         name="Exam Timetables"
         component={ExamTimeTablesStack}
-        options={{ drawerLabel: "Exam Timetables" }}
+        options={{ drawerLabel: () => null }}
       />
     </AppDrawer.Navigator>
   </NavigationContainer>
@@ -99,9 +99,10 @@ function PastPapersStack() {
 }
 
 function ExamTimeTablesStack() {
-  return <StackWrapper name="Exam Timetables" componentScreen={ExamTimetables} />;
+  return (
+    <StackWrapper name="Exam Timetables" componentScreen={ExamTimetables} />
+  );
 }
-
 
 export default App;
 

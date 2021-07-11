@@ -14,7 +14,9 @@ const TimelineDetails = (props) => {
             <View style={styles.table}>
               <Image
                 style={styles.stretch}
-                source={require("../../assets/timeline.png")}
+                source={{
+                  uri: "https://raw.githubusercontent.com/dulajkavinda/aat-mobile/master/assets/timeline.png?token=ALKG4OSY3Z2UX4M5MG2EFWDA6RA5Y",
+                }}
               />
             </View>
           </View>

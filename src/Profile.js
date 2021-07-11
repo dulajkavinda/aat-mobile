@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Image, StyleSheet, Text } from "react-native";
 
-import ProfileTabView from './components/ProfileTabView'
+import ProfileTabView from "./components/ProfileTabView";
 
 import user from "../api/users.json";
 
@@ -20,7 +20,7 @@ export default function Home() {
                   borderRadius: 100,
                 }}
                 source={{
-                  uri: "https://image.shutterstock.com/z/stock-vector-female-graduate-student-profile-icon-with-gown-and-cap-flat-style-vector-eps-1292081770.jpg",
+                  uri: "https://drive.google.com/uc?export=view&id=1xGhvZ0r-Ld9E1GiPUbBxU7JYdxqKW7_v",
                 }}
               />
             </View>
@@ -128,7 +128,7 @@ const styles = StyleSheet.create({
     height: 135,
     width: "50%",
     justifyContent: "center",
-    alignItems: "center", 
+    alignItems: "center",
   },
   info: {
     display: "flex",
