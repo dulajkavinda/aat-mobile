@@ -37,9 +37,9 @@ const ExamTimetables = () => {
         <View style={styles.images}>
           <Image
             source={{
-              uri: "https://raw.githubusercontent.com/dulajkavinda/aat-mobile/master/assets/tt.jpg?token=ALKG4OTDWOVVNA7CF4IV6XLA6RBA2",
+              uri: "https://drive.google.com/uc?export=view&id=1q7FUkXzMZ5aNqthmPb4Wt0YZSKxePyVz",
             }}
-            style={{ width: 380 }}
+            style={{ width: 380, height: 200 }}
             resizeMode="contain"
           />
         </View>
@@ -49,9 +49,9 @@ const ExamTimetables = () => {
         <View style={styles.images}>
           <Image
             source={{
-              uri: "https://raw.githubusercontent.com/dulajkavinda/aat-mobile/master/assets/ep.jpg?token=ALKG4ORBHVKONRIMDUAJ3GDA6RBDY",
+              uri: "https://drive.google.com/uc?export=view&id=18tTAQyKrkSN-Oees6qlDjpgpU434zBcp",
             }}
-            style={{ width: 380 }}
+            style={{ width: 380, height: 200 }}
             resizeMode="contain"
           />
         </View>
