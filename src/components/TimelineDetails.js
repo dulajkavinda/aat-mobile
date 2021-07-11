@@ -1,10 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { View, StyleSheet, Text, Image } from "react-native";
 
 import user from "../../api/users.json";
 import UseDetailRows from "./UseDetailRows";
-
+import axios from "axios";
 const TimelineDetails = (props) => {
+  const [timeLine, setTimline] = useState("");
+
+  useEffect(() => {
+    axios
+      .get("https://aat-backend-api.herokuapp.com/api/asset/getAssets")
+      .then(function (response) {
+        setTimline(response.data[0].timeline);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }, []);
   return (
     <View>
       <Text style={styles.headline}>Timeline and Level Completion</Text>
@@ -15,7 +27,7 @@ const TimelineDetails = (props) => {
               <Image
                 style={styles.stretch}
                 source={{
-                  uri: "https://drive.google.com/uc?export=view&id=13tDUiDa7_z3F8q8IEnUnsBLk2Tb6QIVj",
+                  uri: timeLine,
                 }}
               />
             </View>

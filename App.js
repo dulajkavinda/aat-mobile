@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import "react-native-gesture-handler";
 
@@ -26,53 +26,57 @@ const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 const AppDrawer = createDrawerNavigator();
 
-const App = () => (
-  <NavigationContainer>
-    <AppDrawer.Navigator drawerType="back">
-      <AppDrawer.Screen
-        name="Profile"
-        component={ProfileStack}
-        options={{ drawerLabel: "Profile" }}
-      />
+import axios from "axios";
 
-      <AppDrawer.Screen
-        name="EventCalendar"
-        component={EventCalendarStack}
-        options={{ drawerLabel: "Event Calendar" }}
-      />
+function App() {
+  return (
+    <NavigationContainer>
+      <AppDrawer.Navigator drawerType="back">
+        <AppDrawer.Screen
+          name="Profile"
+          component={ProfileStack}
+          options={{ drawerLabel: "Profile" }}
+        />
 
-      <AppDrawer.Screen
-        name="Examination"
-        component={ExaminationStack}
-        options={{ drawerLabel: "Examination" }}
-      />
+        <AppDrawer.Screen
+          name="EventCalendar"
+          component={EventCalendarStack}
+          options={{ drawerLabel: "Event Calendar" }}
+        />
 
-      <AppDrawer.Screen
-        name="Notifications"
-        component={NotificationsStack}
-        options={{ drawerLabel: "Notifications" }}
-      />
+        <AppDrawer.Screen
+          name="Examination"
+          component={ExaminationStack}
+          options={{ drawerLabel: "Examination" }}
+        />
 
-      <AppDrawer.Screen
-        name="Exam Results"
-        component={ExamResultsStack}
-        options={{ drawerLabel: () => null }}
-      />
+        <AppDrawer.Screen
+          name="Notifications"
+          component={NotificationsStack}
+          options={{ drawerLabel: "Notifications" }}
+        />
 
-      <AppDrawer.Screen
-        name="Past Papers"
-        component={PastPapersStack}
-        options={{ drawerLabel: () => null }}
-      />
+        <AppDrawer.Screen
+          name="Exam Results"
+          component={ExamResultsStack}
+          options={{ drawerLabel: () => null }}
+        />
 
-      <AppDrawer.Screen
-        name="Exam Timetables"
-        component={ExamTimeTablesStack}
-        options={{ drawerLabel: () => null }}
-      />
-    </AppDrawer.Navigator>
-  </NavigationContainer>
-);
+        <AppDrawer.Screen
+          name="Past Papers"
+          component={PastPapersStack}
+          options={{ drawerLabel: () => null }}
+        />
+
+        <AppDrawer.Screen
+          name="Exam Timetables"
+          component={ExamTimeTablesStack}
+          options={{ drawerLabel: () => null }}
+        />
+      </AppDrawer.Navigator>
+    </NavigationContainer>
+  );
+}
 
 function ProfileStack() {
   return <StackWrapper name="Profile" componentScreen={Profile} />;

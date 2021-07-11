@@ -1,8 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { View, StyleSheet, Text } from "react-native";
 import { Calendar, CalendarList, Agenda } from "react-native-calendars";
 import { Icon } from "react-native-elements";
+import axios from "axios";
 const EventCalendar = () => {
+  const [eventData, setData] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("https://aat-backend-api.herokuapp.com/api/event/getEvents")
+      .then(function (response) {
+        setData(response.data[0].events);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }, []);
+
+  if (eventData.length === 0) {
+    return null;
+  }
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -51,7 +69,7 @@ const EventCalendar = () => {
             <View>
               <Text style={styles.bottom_top_Txt}>Today Plans</Text>
               <Text style={styles.bottom_top_Txt}>
-                8.00 - 10.00 A.M Account Online Lecture
+                {eventData[0].start} - {eventData[0].end} {eventData[0].event}
               </Text>
             </View>
 
@@ -77,7 +95,7 @@ const EventCalendar = () => {
                 name={Platform.OS === "ios" ? "book" : "book"}
               />
               <Text style={styles.color_btn_txt}>
-                Final Examination 04 - April - 2021
+                {eventData[1].start} - {eventData[1].end} {eventData[1].event}
               </Text>
             </View>
             <View style={styles.pink_btn}>
@@ -87,7 +105,7 @@ const EventCalendar = () => {
                 type="feather"
                 name={Platform.OS === "ios" ? "award" : "award"}
               />
-              <Text style={styles.color_btn_txt}>Award Ceremony</Text>
+              <Text style={styles.color_btn_txt}> {eventData[1].event}</Text>
             </View>
           </View>
         </View>

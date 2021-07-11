@@ -1,11 +1,35 @@
-import React from "react";
 import { View, Image, StyleSheet, Text } from "react-native";
-
+import React, { useEffect, useState } from "react";
 import ProfileTabView from "./components/ProfileTabView";
+import axios from "axios";
 
-import user from "../api/users.json";
+export default function Profile(props) {
+  const [user, setData] = useState(null);
+  const [profile, setProfile] = useState("");
 
-export default function Home() {
+  useEffect(() => {
+    axios
+      .get("https://aat-backend-api.herokuapp.com/api/user/getUserData")
+      .then(function (response) {
+        setData(response.data[0]);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+
+    axios
+      .get("https://aat-backend-api.herokuapp.com/api/asset/getAssets")
+      .then(function (response) {
+        setProfile(response.data[0].profile);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }, []);
+
+  if (user === null) {
+    return null;
+  }
   return (
     <View style={styles.container}>
       <View style={styles.profile_wrapper}>
@@ -20,7 +44,7 @@ export default function Home() {
                   borderRadius: 100,
                 }}
                 source={{
-                  uri: "https://drive.google.com/uc?export=view&id=1xGhvZ0r-Ld9E1GiPUbBxU7JYdxqKW7_v",
+                  uri: profile,
                 }}
               />
             </View>

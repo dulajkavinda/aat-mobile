@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   View,
   StyleSheet,
@@ -7,10 +7,25 @@ import {
   ScrollView,
   TouchableOpacity,
 } from "react-native";
-
+import axios from "axios";
 import { Web } from "react-native-openanything";
 
 const ExamTimetables = () => {
+  const [timetable, setTimetable] = useState("");
+  const [subjects, setSubjects] = useState("");
+
+  useEffect(() => {
+    axios
+      .get("https://aat-backend-api.herokuapp.com/api/asset/getAssets")
+      .then(function (response) {
+        setTimetable(response.data[0].timetable);
+        setSubjects(response.data[0].timetable);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }, []);
+
   const centers = [
     { name: "Ampara", key: 1 },
     { name: "Anuradhapura", key: 2 },
@@ -37,7 +52,7 @@ const ExamTimetables = () => {
         <View style={styles.images}>
           <Image
             source={{
-              uri: "https://drive.google.com/uc?export=view&id=1q7FUkXzMZ5aNqthmPb4Wt0YZSKxePyVz",
+              uri: timetable,
             }}
             style={{ width: 380, height: 200 }}
             resizeMode="contain"
@@ -49,7 +64,7 @@ const ExamTimetables = () => {
         <View style={styles.images}>
           <Image
             source={{
-              uri: "https://drive.google.com/uc?export=view&id=18tTAQyKrkSN-Oees6qlDjpgpU434zBcp",
+              uri: subjects,
             }}
             style={{ width: 380, height: 200 }}
             resizeMode="contain"
