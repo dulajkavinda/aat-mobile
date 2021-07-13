@@ -1,5 +1,5 @@
 import React from "react";
-import { View, StyleSheet, ScrollView } from "react-native";
+import { View, Linking, ScrollView } from "react-native";
 
 import ExamContentButton from "./components/ExamContentButton";
 
@@ -23,7 +23,7 @@ const Examination = () => {
         <ExamContentButton
           text="Application Issuing & Closing"
           color="#4169C6"
-          onPress={() => navigation.navigate("Exam Timetables")}
+          onPress={ ()=>{ Linking.openURL('https://www.aatsl.lk/index.php/en/examination/examination-information')}}
         />
         <ExamContentButton
           text="Past Papers & Syllabus"
@@ -38,7 +38,7 @@ const Examination = () => {
         <ExamContentButton
           text="Centers"
           color="#214E96"
-          onPress={() => navigation.navigate("Exam Timetables")}
+          onPress={ ()=>{ Linking.openURL('https://www.aatsl.lk/index.php/en/examination/examination-information')}}
         />
       </ScrollView>
     </View>
