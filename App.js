@@ -83,7 +83,7 @@ function ProfileStack() {
 }
 
 function EventCalendarStack() {
-  return <StackWrapper name="Event Calender" componentScreen={EventCalendar} />;
+  return <StackWrapper name="Event Calendar" componentScreen={EventCalendar} />;
 }
 
 function ExaminationStack() {
