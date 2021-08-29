@@ -18,7 +18,7 @@ const PersonalDetails = (props) => {
                                     return <UseDetailRows name='Level ' data={item.level_name} left={'60%'} right={'40%'}/>
                                 }
                             })}
-							<UseDetailRows name='Batch ' data={props.data.batch < 10 ? `0${props.data.batch}`:props.data.batch} left={'60%'} right={'40%'}/>
+							<UseDetailRows name='Last Renewal ' data={props.data.batch < 10 ? `0${props.data.batch}`:props.data.batch} left={'60%'} right={'40%'}/>
 							<UseDetailRows name='Year of commencement ' data={props.data.year_commencement} left={'60%'} right={'40%'}/>
 							<UseDetailRows name='Center ' data={props.data.center} left={'60%'} right={'40%'}/>
 						</View>
